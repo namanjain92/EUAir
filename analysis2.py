@@ -29,7 +29,7 @@ print(df_long.head(10))
 if not os.path.exists("outputs"):
     os.makedirs("outputs")
 
-# --- 6. Plot total EU passengers over time ---
+# Plot total EU passengers over time ---
 eu_total = df_long.groupby('year')['passengers'].sum()
 
 plt.figure(figsize=(8,5))
@@ -42,7 +42,7 @@ plt.tight_layout()
 plt.savefig("outputs/total_passengers_eu.png")
 plt.show()
 
-# --- 7. Top 10 countries in 2019 and 2021 ---
+#  Top 10 countries in 2019 and 2021 ---
 for yr in [2019, 2021]:
     top10 = df_long[df_long['year'] == yr].sort_values('passengers', ascending=False).head(10)
     plt.figure(figsize=(8,5))
@@ -54,7 +54,7 @@ for yr in [2019, 2021]:
     plt.savefig(f"outputs/top10_{yr}.png")
     plt.show()
 
-# --- 8. Percent change 2019 → 2021 (COVID impact) ---
+# Percent change 2019 → 2021 (COVID impact) ---
 pivot = df_long.pivot(index='geo', columns='year', values='passengers')
 pivot['change_%'] = ((pivot[2021] - pivot[2019]) / pivot[2019]) * 100
 pivot = pivot.sort_values('change_%')
@@ -67,5 +67,3 @@ plt.ylabel("Country")
 plt.tight_layout()
 plt.savefig("outputs/covid_impact_change.png")
 plt.show()
-
-print("Analysis complete! Plots saved in 'outputs/' folder.")
