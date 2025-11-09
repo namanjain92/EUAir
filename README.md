@@ -3,7 +3,7 @@ Comparison between different EU countries based on number of air passengers
 
 ## Data Source
 
-- Dataset: [Eurostat Air Transport Passengers](https://ec.europa.eu/eurostat/web/transport/data/database) (`estat_ttr00012.tsv`)
+- Dataset: [Eurostat Air Transport Passengers](https://ec.europa.eu/eurostat/web/main/data/database) (`estat_ttr00012.tsv`)
 - Data includes passenger numbers by country and year.
 
 ## Key Analyses
